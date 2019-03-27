@@ -105,19 +105,27 @@ smth_12
 
 %%
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 extern char yytext[];
 extern int column;
 extern int num_string;
 
-yyerror(s)
-char *s;
+
+
+void main( int argc,char *argv[] ) {
+
+	freopen(argv[1], "r", stdin); 
+
+	yyparse();
+
+
+ }
+
+yyerror(s) char *s;
 {
     fflush(stdout);
     printf("\n%*s\n", column, "^");
     printf( "string -> %i\n",num_string);
 }
-
-void main() {
-    yyparse();
- }
