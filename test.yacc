@@ -115,12 +115,21 @@ extern int num_string;
 
 
 void main( int argc,char *argv[] ) {
+	/*	check for correct input	*/
+	if (argc != 2){
+		printf("invalid number of arguments\n");
+		exit(0);
+	}
+
+	/*	check the file name	*/
+	int end_elem = strlen(argv[1]) - 1;
+	if (argv[1][end_elem] != 'z' || argv[1][end_elem - 1] != '.' ){
+		printf("Invalid file name\n");
+		exit(0);
+	}
 
 	freopen(argv[1], "r", stdin); 
-
 	yyparse();
-
-
  }
 
 yyerror(s) char *s;
