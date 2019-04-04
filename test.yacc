@@ -12,6 +12,8 @@ statement
     | expression ';'
     | IF '(' expression ')' statement
     | IF '(' expression ')' statement ELSE statement
+    | IF '('  ')' statement
+    | IF '(' ')' statement ELSE statement
     | WHILE '(' expression ')' statement
     | WHILE '(' ')' statement
     | PRINT expression
