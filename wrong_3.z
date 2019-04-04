@@ -1,0 +1,7 @@
+if (++p){
+    print(var);
+}
+else
+        {{
+            print(p);
+        }
